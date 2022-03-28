@@ -25,7 +25,7 @@ const pages = [
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
   };
 
@@ -76,7 +76,7 @@ const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <Link to={page.to}>
+                <Link to={page.to} style={{ textDecoration: "none" }}>
                   <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
@@ -94,7 +94,7 @@ const Navbar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Link to={page.to}>
+              <Link to={page.to} style={{ textDecoration: "none" }}>
                 <Button
                   key={page.name}
                   onClick={handleCloseNavMenu}

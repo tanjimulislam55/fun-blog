@@ -1,23 +1,17 @@
-import React from 'react'
 import { Box } from "@mui/material";
+import React from "react";
 
-export const StoreContext = React.createContext(); 
+export const StoreContext = React.createContext([[], () => null]);
 
-const Store = ({children}) => {
-
-    const [favPosts, SetFavPosts] = React.useState([])
-    return <>
-        <StoreContext.Provider value={[favPosts, SetFavPosts]}>
-        <Box
-        sx={{
-          width: "60%",
-          maxWidth: "60%",
-          margin: "auto",
-        }}
-      >
-            {children}
-       </Box>
-        </StoreContext.Provider>
+const Store = ({ children }) => {
+  const [favPosts, SetFavPosts] = React.useState([]);
+  console.log(favPosts)
+  return (
+    <>
+      <StoreContext.Provider value={[favPosts, SetFavPosts]}>
+        <Box>{children}</Box>
+      </StoreContext.Provider>
     </>
-}
+  );
+};
 export default Store;
