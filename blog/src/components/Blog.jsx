@@ -20,7 +20,8 @@ const Blog = () => {
   const [loadLimit, setLoadLimit] = useState(11)
 
   const pushToFav = (post) => {
-    if (!data.includes(post)) {
+    let index = data.findIndex(item => item.id === post.id)
+    if (index !== -1) {
       setData([...data, post]);
       localStorage.setItem(post.id, JSON.stringify(post))
     }
