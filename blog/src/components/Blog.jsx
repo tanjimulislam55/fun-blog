@@ -21,7 +21,8 @@ const Blog = () => {
 
   const pushToFav = (post) => {
     let index = data.findIndex(item => item.id === post.id)
-    if (index !== -1) {
+    console.log(index)
+    if (index === -1) {
       setData([...data, post]);
       localStorage.setItem(post.id, JSON.stringify(post))
     }
