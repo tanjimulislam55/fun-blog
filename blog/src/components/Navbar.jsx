@@ -25,7 +25,7 @@ const pages = [
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event: any) => {
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
